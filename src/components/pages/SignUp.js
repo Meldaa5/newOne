@@ -5,6 +5,7 @@ import { Button } from '../Button';
 import PlanetOne from'../images/pngegg1.png'
 import PlanetTwo from'../images/pngwing.com.png'
 import PlanetThree from'../images/pngegg.png'
+import { useNavigate } from 'react-router-dom';
 const Section = styled.section`
 height :100vh;
 display:flex;
@@ -79,10 +80,20 @@ ${Image}:nth-child(3){
 }
 `;
 const SignUp =()=> {
+  
   const fadeLeft={
     hidden:{opacity:0, x:-100,},
        visible:{opacity:1 , x:0}
+       
     }
+     // 'Get Started' butonuna tıklandığında login sayfasına yönlendirmeyi yapmayı unutma
+    //usehook yerine navigate gelmiş
+    const navigate = useNavigate();
+    const handleGetStarted = () => {
+      // 'Get Started' butonuna tıklandığında login sayfasına yönlendirme
+      navigate('/Login');
+    };
+   
 
   return (
     <>
@@ -93,21 +104,26 @@ const SignUp =()=> {
          initial={{ opacity:0}}
          animate={{opacity:1}}
          transition={{duration:3}}
-        >Welcome to the World of Books</motion.h1> 
+        >Kitapların Dünyasına Hoşgeldiniz</motion.h1> 
         <motion.p
         variants={fadeLeft}
         initial='hidden'
         animate='visible'
         transition={{duration:1}}
-        >Journey to the unknown </motion.p>
-        <StyledButton
+        >Bilinmezliğe Yolculuk </motion.p>
+       
+        <StyledButton 
+      
         whileHover={{scale:1.05}}
         whileTap={{scale:0.95,
         backgroundColor:'green', border:'none',color:'#000'}}
         initial={{opacity:0}}
         animate={{opacity:1,transition:{duration:1.5}}}
+        onClick={handleGetStarted}
+        >Hadi Başlayalım</StyledButton>    
         
-        >Get Started</StyledButton>
+       
+
           </ColumnLeft>
           <ColumnRight>
            <Image src ={PlanetOne} alt='planet'

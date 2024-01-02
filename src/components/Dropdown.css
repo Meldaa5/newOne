@@ -11,7 +11,7 @@
     background: black;
 }
 .dropdown-menu li:hover {
-    background: gray;
+    background:   slateblue;
 }
 .dropdown-menu.clicked{
     display: none;

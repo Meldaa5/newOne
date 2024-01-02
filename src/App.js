@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 //import { Router } from 'react-router-dom';
 import { BrowserRouter as Router,Routes , Route} from 'react-router-dom';
 
- import Services from './components/pages/Services';
+import Services from './components/pages/Services';
 import Favorilerimnavbar from './components/pages/Favorilerimnavbar';
 import ContactUs from './components/pages/ContactUs';
 import SignUp from './components/pages/SignUp';
@@ -16,6 +16,7 @@ import Okuyacalarım from './components/pages/Okuyacaklarım';
 import Favorites from './components/pages/Favorites';
 import Support from './components/pages/Support';
 import LogOut from './components/pages/LogOut';
+import Login from './components/pages/Login';
 function App() {
   return (
 
@@ -34,6 +35,10 @@ function App() {
       <Route path ='/favorites' element={<Favorites/>} />
       <Route path ='/support' element={<Support/>} />
       <Route path ='/logOut' element={<LogOut/>} />
+      <Route path ='/login' element={<Login/>} />
+      
+        
+      
     </Routes>
 </Router>
   );

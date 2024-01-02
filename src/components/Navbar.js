@@ -43,6 +43,7 @@ function Navbar() {
       </Link>
       
       {/*  sidebar*/}
+      {/* responsive */}
       <Link to = '/' 
       className='navbar-logo'>
         Kitap <i className='fa-solid fa-book-open-reader '/>
@@ -50,10 +51,11 @@ function Navbar() {
       <div className='menu-icon' onClick={handleClick}>
         <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
       </div>
+      
       <ul className={click ? 'nav-menu active' :'nav-menu'}>
         <li className='nav-item'>
           <Link to ='/' className='nav-links' onClick={closeMobileMenu}>
-          Home
+          Anasayfa
           </Link>
         </li>
         <li className='nav-item'
@@ -84,6 +86,7 @@ function Navbar() {
           </Link>
         </li>
       </ul>
+        {/* responsive */}
       <Button/>
     </nav>
     <nav className={sidebar ? 'nav-menu2 active2': 'nav-menu2'}>
