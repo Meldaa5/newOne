@@ -10,8 +10,9 @@ from rest_framework import status
 def books(request):
     if request.method=='GET':
         books=Kitap.objects.all()
-        serializer=KitapSerializer(books, many=True)
+        serializer=KitapSerializer(books,many=True)
         return Response(serializer.data)
+    
     elif request.method=='POST':
         serializer=KitapSerializer(data=request.data)
         if serializer.is_valid():
